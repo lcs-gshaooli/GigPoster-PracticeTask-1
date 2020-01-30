@@ -30,8 +30,39 @@ let lightGrey = Color(hue: 84, saturation: 6, brightness: 88, alpha: 100)
 let deepRed = Color(hue: 7, saturation: 97, brightness: 72, alpha: 100)
 
 // Begin your solution here...
+// Let's see where the origin is
+canvas.drawAxes()
 
+// Move the origin 100 pixels right, 200 pixels up
+canvas.translate(to:Point(x: 100, y: 200))
 
+// Let's see where the origin is
+canvas.drawAxes()
+
+// Draw a square at the origin
+canvas.drawRectangle(at: Point(x: 0, y: 0), width: 50, height: 50)
+
+// Make shapes have no fill
+canvas.drawShapesWithFill = false
+
+// Move the origin again - over 100, up 300
+canvas.translate(to: Point(x:100, y:300))
+
+//Check to see wherte origin is
+canvas.drawAxes()
+
+// Make a loop, draw six squares rotated around current origin
+for _ in 1...6 {
+    // Rotate origin
+    canvas.rotate(by: 60) // 360/ 6 = 600
+    
+    // Draw axes
+   //canvas.drawAxes()
+    
+    // Draw square
+    canvas.drawRectangle(at: Point(x:0, y:0), width: 50, height: 50)
+    
+}
 /*:
  ## Use Source Control
  
@@ -43,4 +74,3 @@ let deepRed = Color(hue: 7, saturation: 97, brightness: 72, alpha: 100)
  The code below is necessary to see results in the Assistant Editor at right. Please do not remove.
  */
 PlaygroundPage.current.liveView = canvas
-
