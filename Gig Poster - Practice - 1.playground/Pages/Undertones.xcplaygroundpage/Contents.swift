@@ -28,6 +28,8 @@ let canvas = Canvas(width: 400, height: 600)
 // COLORS
 let lightGrey = Color(hue: 84, saturation: 6, brightness: 88, alpha: 100)
 let deepRed = Color(hue: 7, saturation: 97, brightness: 72, alpha: 100)
+let transparentBlack = Color(hue: 0, saturation: 0, brightness: 0, alpha: 20)
+
 
 //// Let's see where the origin is
 //canvas.drawAxes()
@@ -88,6 +90,31 @@ canvas.drawText(message: "june 5 1979 / 7:30 pm", at: Point (x:150, y:510), size
 
 canvas.drawText(message: "advance tickets: £2.00", at: Point (x:275, y:550), size: 10)
 canvas.drawText(message: "at the door:£2.50", at: Point (x:275, y:540), size: 10)
+
+
+
+// Text color
+canvas.textColor = transparentBlack
+
+//Move the origin
+canvas.translate(to: Point (x: 0, y: 400))
+
+//// Make letter have no fill
+//canvas.drawShapesWithFill = false
+//canvas.drawShapesWithBorders = true
+
+for _ in stride (from: 700, through: -40, by: -40){
+    
+    
+// Draw text
+    canvas.drawText(message: "undertones", at: Point(x:10, y: -20), size: 70)
+    
+    // Rotate origin
+    canvas.rotate(by: -5)
+    
+}
+    // Rotate canvas back
+    canvas.rotate(by: 300)
 
 
 /*:
